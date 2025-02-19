@@ -1,0 +1,56 @@
+{
+	"name": "@gather-flow/server",
+	"version": "1.0.0",
+	"type": "module",
+	"engines": {
+		"node": ">=22.x.x"
+	},
+	"lint-staged": {
+		"**/*.{js,ts,tsx}": [
+			"eslint --fix"
+		],
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"scripts": {
+		"build": "tsc && resolve-tspaths",
+		"dev": "tsx watch src/index.ts",
+		"start": "node ./dist/index.js",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
+		"@eslint/js": "^9.20.0",
+		"@types/node": "^22.13.4",
+		"eslint": "^9.20.1",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"globals": "^15.15.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.4.3",
+		"pino-pretty": "^13.0.0",
+		"prettier": "^3.5.1",
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.24.1"
+	},
+	"dependencies": {
+		"@fastify/awilix": "^7.0.0",
+		"@fastify/cookie": "^11.0.2",
+		"@fastify/cors": "^10.0.2",
+		"@fastify/helmet": "^13.0.1",
+		"@fastify/multipart": "^9.0.3",
+		"@fastify/rate-limit": "^10.2.2",
+		"@fastify/swagger": "^9.4.2",
+		"@fastify/swagger-ui": "^5.2.2",
+		"@node-rs/argon2": "^2.0.2",
+		"awilix": "^12.0.4",
+		"dotenv": "^16.4.7",
+		"fastify": "^5.2.1",
+		"fastify-type-provider-zod": "^4.0.2",
+		"resolve-tspaths": "^0.8.23",
+		"zod": "^3.24.2"
+	}
+}
